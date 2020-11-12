@@ -1,10 +1,12 @@
+@import "../sass/utilities/Variables.scss";
+
 .header-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
   height: 35vh;
-  background-color: #1d3c40;
-  color: white;
+  background-color: $color-primary;
+  color: $color-secondary;
 
   .title {
     font-size: 8em;
@@ -14,7 +16,7 @@
   .infos-wrapper {
     text-align: center;
     width: 100%;
-    border-left: solid 1px #fff;
+    border-left: solid 1px $color-secondary;
     .info {
       font-size: 3em;
       animation: appear 1.2s ease-in-out;

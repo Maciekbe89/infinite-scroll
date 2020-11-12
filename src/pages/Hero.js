@@ -12,13 +12,17 @@ const Hero = () => {
   const [result, setResult] = useState([]);
   const [offset, setOffset] = useState(1);
   const [hasError, setHasError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const isBottomScroll = useBottomScroll();
-  console.log({isBottomScroll});
 
   useEffect(() => {
     if (isBottomScroll) {
-      setOffset((o) => o + 1);
+      setLoading(true);
+      setTimeout(() => {
+        setOffset((o) => o + 1);
+        setLoading(false);
+      }, 2000);
     }
   }, [isBottomScroll]);
 
@@ -34,7 +38,6 @@ const Hero = () => {
     };
     fetchData();
   }, []);
-  console.log(result);
   return (
     <>
       {hasError ? (
@@ -46,6 +49,7 @@ const Hero = () => {
           ))}
         </div>
       )}
+      {loading && <p className="loading">loading...</p>}
     </>
   );
 };
