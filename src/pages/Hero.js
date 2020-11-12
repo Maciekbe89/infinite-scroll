@@ -29,7 +29,7 @@ const Hero = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const buffer = await fetch("/api.json");
+        const buffer = await fetch(`${process.env.PUBLIC_URL}/api.json`);
         const data = await buffer.json();
         setResult(data.posts);
       } catch (e) {
@@ -38,6 +38,7 @@ const Hero = () => {
     };
     fetchData();
   }, []);
+  console.log(result);
   return (
     <>
       {hasError ? (
