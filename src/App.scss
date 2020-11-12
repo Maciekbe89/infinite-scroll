@@ -6,3 +6,13 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.main-container {
+  min-height: calc(100vh - 2.5em);
+  overflow: hidden;
+}

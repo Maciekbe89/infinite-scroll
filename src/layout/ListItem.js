@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../components/Button";
+import PropTypes from "prop-types";
 import "./ListItem.scss";
 
 const ListItem = ({title, date, excerpt, thumb, url}) => {
@@ -15,6 +16,14 @@ const ListItem = ({title, date, excerpt, thumb, url}) => {
       </div>
     </div>
   );
+};
+
+ListItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  excerpt: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  thumb: PropTypes.string,
 };
 
 export default ListItem;

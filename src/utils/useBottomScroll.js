@@ -6,9 +6,14 @@ export const useBottomScroll = () => {
   useEffect(() => {
     const onScroll = () => {
       const isBottom =
-        window.innerHeight + document.documentElement.scrollTop ===
-        document.documentElement.offsetHeight;
+        window.innerHeight + document.documentElement.scrollTop >=
+        document.documentElement.offsetHeight - 10;
       setBottom(isBottom);
+      console.log(
+        window.innerHeight,
+        document.documentElement.scrollTop,
+        document.documentElement.offsetHeight
+      );
     };
     window.addEventListener("scroll", onScroll);
     return () => {
