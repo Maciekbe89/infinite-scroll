@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {useBottomScroll} from "../utils/useBottomScroll";
+import ListItem from "../layout/ListItem";
+import "./Hero.scss";
 
 // const API = "https://pastebin.pl/view/raw/e1658aa0";
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 12;
 
 const Hero = () => {
   const [result, setResult] = useState([]);
@@ -33,12 +35,9 @@ const Hero = () => {
   }, []);
   console.log(result);
   return (
-    <div>
-      {result.slice(0, PAGE_SIZE * offset).map((item, id) => (
-        <h1>
-          {id}
-          {item.title}
-        </h1>
+    <div className="items-container">
+      {result.slice(0, PAGE_SIZE * offset).map((props, id) => (
+        <ListItem {...props} key={id} />
       ))}
     </div>
   );

@@ -1,0 +1,16 @@
+.button {
+  padding: 0.4em 0.6em;
+  background-color: #1d3c40;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5em;
+  border: solid 1px #1d3c40;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: transparent;
+    // letter-spacing: 0.1em;
+    color: #000;
+  }
+}
