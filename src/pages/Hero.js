@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useBottomScroll} from "../utils/useBottomScroll";
 import ListItem from "../layout/ListItem";
 import Error from "../components/Error";
+import Loading from "../components/Loading";
 import "./Hero.scss";
 
 // const API = "https://pastebin.pl/view/raw/e1658aa0";
@@ -50,7 +51,7 @@ const Hero = () => {
           ))}
         </div>
       )}
-      {loading && <p className="loading">loading...</p>}
+      {loading && <Loading />}
     </>
   );
 };
